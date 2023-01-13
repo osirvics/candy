@@ -26,7 +26,7 @@ claimed = 0
 
 def run(p: Playwright, username, password):
     global claimed
-    browser = p.firefox.launch()
+    browser = p.firefox.launch(headless= False)
     context = browser.new_context()
     page = context.new_page()
     try:
