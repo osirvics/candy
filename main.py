@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import os
 import subprocess
 print("Installing missing dep1")
-subprocess.run(["playwright", "install", "--with-deps", "firefox"])
+subprocess.run(["sudo", "playwright", "install", "--with-deps", "firefox"])
 print("Installing missing dep2")
 #subprocess.run(["playwright", "install-deps"])
 
