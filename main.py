@@ -2,7 +2,9 @@ from playwright.sync_api import sync_playwright, Playwright
 from dotenv import load_dotenv
 import os
 import subprocess
+print("Installing missing dep1")
 subprocess.run(["playwright", "install"])
+print("Installing missing dep2")
 subprocess.run(["playwright", "install-deps"])
 
 #Load environment variables from .env file
@@ -26,6 +28,7 @@ passwords = [p1, p2, p3, p4, p5]
 claimed = 0
 
 def run(p: Playwright, username, password):
+    print("Commencing candies claim")
     global claimed
     browser = p.firefox.launch()
     context = browser.new_context()
