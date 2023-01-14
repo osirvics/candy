@@ -21,7 +21,7 @@ p6 = os.environ['p6']
 
 usernames = [u1, u2, u3, u4, u5, u6]
 passwords = [p1, p2, p3, p4, p5, p6]
-
+print("Checking env secret: ", u1)
 claimed = 0
 
 def run(p: Playwright, username, password):
