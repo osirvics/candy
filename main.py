@@ -24,16 +24,18 @@ claimed = 0
 
 def run(p: Playwright, username, password):
     global claimed
-    browser = p.firefox.launch()
+    browser = p.firefox.launch(headless= False)
     context = browser.new_context()
     page = context.new_page()
     try:
+        print("Commencing candies claim")
         page.goto("https://www.coingecko.com/", timeout=0)
         page.wait_for_timeout(6_000)
     except BaseException:
         print("Could not access https://www.coingecko.com/")
         exit(1001)
     try:
+        print("Commencing login action")
         page.locator("span").filter(has_text="Login").click()
         page.wait_for_timeout(5_000)
         page.locator("#signInEmail").click()
@@ -60,7 +62,7 @@ def run(p: Playwright, username, password):
             else:
                 # button exist, proceed with clicking the button
                 print("This will mined coins working")
-                button.click()
+                #button.click()
                 print("Succesfully claimed for today")
                 claimed += 1
                 print("Claimed: ", claimed)
