@@ -1,6 +1,8 @@
 from playwright.sync_api import sync_playwright, Playwright
 from dotenv import load_dotenv
 import os
+import subprocess
+subprocess.run(["playwright", "install"])
 
 #Load environment variables from .env file
 load_dotenv()
