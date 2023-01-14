@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import os
 import subprocess
 subprocess.run(["playwright", "install"])
+subprocess.run(["playwright", "install-deps"])
 
 #Load environment variables from .env file
 load_dotenv()
