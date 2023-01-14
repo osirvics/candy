@@ -17,13 +17,14 @@ p3 = os.environ['p3']
 p4 = os.environ['p4']
 p5 = os.environ['p5']
 
-usernames = [u1, u2, u3, u4, u5]
-passwords = [p1, p2, p3, p4, p5]
+usernames = [u3, u4, u5]
+passwords = [p3, p4, p5]
 
 claimed = 0
 
 def run(p: Playwright, username, password):
     global claimed
+    print("Kicking")
     browser = p.firefox.launch()
     context = browser.new_context()
     page = context.new_page()
