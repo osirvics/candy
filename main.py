@@ -62,7 +62,7 @@ def run(p: Playwright, username, password):
             else:
                 # button exist, proceed with clicking the button
                 print("This will mined coins working")
-                #button.click()
+                button.click()
                 print("Succesfully claimed for today")
                 claimed += 1
                 print("Claimed: ", claimed)
