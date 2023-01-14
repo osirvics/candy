@@ -55,7 +55,7 @@ def run(p: Playwright, username, password):
         print('Cannot login')
         exit(1002)
     try:
-        page.get_by_role("link", name="coingecko candy jar").click()
+        page.get_by_role("link", name="coingecko candy jar").click(timeout=0)
         page.wait_for_timeout(5_000)
         #page.query_selector("button[data-action='click->points#claimCandy'][data-target='points.button']").click()
         button = page.query_selector(".btn.btn-primary.col-12.collect-candy-button")
