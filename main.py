@@ -11,14 +11,16 @@ u2 = os.environ['u2']
 u3 = os.environ['u3']
 u4 = os.environ['u4']
 u5 = os.environ['u5']
+u6 = os.environ['u5']
 p1 = os.environ['p1']
 p2 = os.environ['p2']
 p3 = os.environ['p3']
 p4 = os.environ['p4']
 p5 = os.environ['p5']
+p6 = os.environ['p6']
 
-usernames = [u3, u4, u5]
-passwords = [p3, p4, p5]
+usernames = [u1, u2, u3, u4, u5, u6]
+passwords = [p1, p2, p3, p4, p5, p6]
 
 claimed = 0
 
