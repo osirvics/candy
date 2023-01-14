@@ -3,9 +3,9 @@ from dotenv import load_dotenv
 import os
 import subprocess
 print("Installing missing dep1")
-subprocess.run(["playwright", "install"])
+subprocess.run(["playwright", "install", "firefox"])
 print("Installing missing dep2")
-subprocess.run(["playwright", "install-deps"])
+#subprocess.run(["playwright", "install-deps"])
 
 #Load environment variables from .env file
 load_dotenv()
