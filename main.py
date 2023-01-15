@@ -16,7 +16,7 @@ u2 = os.environ['u2']
 u3 = os.environ['u3']
 u4 = os.environ['u4']
 u5 = os.environ['u5']
-u6 = os.environ['u5']
+u6 = os.environ['u6']
 p1 = os.environ['p1']
 p2 = os.environ['p2']
 p3 = os.environ['p3']
@@ -24,15 +24,15 @@ p4 = os.environ['p4']
 p5 = os.environ['p5']
 p6 = os.environ['p6']
 
-usernames = [u1, u2, u3, u4, u5, u6]
-passwords = [p1, p2, p3, p4, p5, p6]
+usernames = [u6]
+passwords = [p6]
 
 claimed = 0
 
 def run(p: Playwright, username, password):
     print("Commencing candies claim")
     global claimed
-    browser = p.firefox.launch()
+    browser = p.firefox.launch(headless = False)
     context = browser.new_context()
     page = context.new_page()
     try:
