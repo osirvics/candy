@@ -34,8 +34,7 @@ def run(p: Playwright, username, password):
         print("Commencing candies claim")
         page.goto("https://www.coingecko.com/", timeout=0)
         page.wait_for_timeout(6_000)
-    except Exception as e:
-        print(e)
+    except BaseException:
         print("Could not access https://www.coingecko.com/")
         exit(1001)
     try:
@@ -52,12 +51,11 @@ def run(p: Playwright, username, password):
         page.wait_for_timeout(5_000)
         page.get_by_role("button", name="Login").click()
         page.wait_for_timeout(10_000)
-    except Exception as e:
-        print(e)
+    except BaseException:
         print('Cannot login')
         exit(1002)
     try:
-        page.get_by_role("link", name="coingecko candy jar").click(timeout=0)
+        page.get_by_role("link", name="coingecko candy jar").click()
         page.wait_for_timeout(5_000)
         #page.query_selector("button[data-action='click->points#claimCandy'][data-target='points.button']").click()
         button = page.query_selector(".btn.btn-primary.col-12.collect-candy-button")
