@@ -52,7 +52,8 @@ def run(p: Playwright, username, password):
         page.wait_for_timeout(5_000)
         page.get_by_role("button", name="Login").click()
         page.wait_for_timeout(10_000)
-    except BaseException:
+    except Exception as e:
+        print(e)
         print('Cannot login')
         exit(1002)
     try:
