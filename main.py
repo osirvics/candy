@@ -32,7 +32,7 @@ def run(p: Playwright, username, password):
     page = context.new_page()
     try:
         print("Commencing candies claim")
-        page.goto("https://www.coingecko.com/")
+        page.goto("https://www.coingecko.com/", timeout=0)
         page.wait_for_timeout(6_000)
     except Exception as e:
         print(e)
