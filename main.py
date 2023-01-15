@@ -94,14 +94,14 @@ def mine():
 
 
 
-# schedule.every().day.at("01:00").do(mine(),'It is 01:00')
+schedule.every().day.at("01:02").do(lambda: mine())
 # schedule.every(10).minutes.do(job)
-schedule.every(10).seconds.do(lambda: mine())
+# schedule.every(10).seconds.do(lambda: mine())
 
 def main():
     while True:
         schedule.run_pending()
-        time.sleep(10)
+        time.sleep(30)
 
 if __name__ == '__main__':
     main()
