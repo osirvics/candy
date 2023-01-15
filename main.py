@@ -1,6 +1,8 @@
 from playwright.sync_api import sync_playwright, Playwright
 from dotenv import load_dotenv
 import os
+import schedule
+import time
 
 #Load environment variables from .env file
 load_dotenv()
@@ -19,14 +21,16 @@ p4 = os.environ['p4']
 p5 = os.environ['p5']
 p6 = os.environ['p6']
 
+
 usernames = [u1, u2, u3, u4, u5, u6]
 passwords = [p1, p2, p3, p4, p5, p6]
+
 print("Checking env secret: ", u1)
 claimed = 0
 
 def run(p: Playwright, username, password):
     global claimed
-    print("Kicking")
+    print("Stating script")
     browser = p.firefox.launch()
     context = browser.new_context()
     page = context.new_page()
@@ -51,6 +55,7 @@ def run(p: Playwright, username, password):
         page.wait_for_timeout(5_000)
         page.get_by_role("button", name="Login").click()
         page.wait_for_timeout(10_000)
+        print("Login Succesfful")
     except BaseException:
         print('Cannot login')
         exit(1002)
@@ -82,10 +87,21 @@ def run(p: Playwright, username, password):
     browser.close()
 
 
-def main():
+def mine():
     with sync_playwright() as p:
         for i, username in enumerate(usernames):
             run(p, username, passwords[i])
+
+
+
+# schedule.every().day.at("01:00").do(mine(),'It is 01:00')
+# schedule.every(10).minutes.do(job)
+schedule.every(10).seconds.do(lambda: mine())
+
+def main():
+    while True:
+        schedule.run_pending()
+        time.sleep(10)
 
 if __name__ == '__main__':
     main()
