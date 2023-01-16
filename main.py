@@ -1,7 +1,6 @@
 from playwright.sync_api import sync_playwright, Playwright
 from dotenv import load_dotenv
 import os
-import schedule
 import time
 
 #Load environment variables from .env file
@@ -46,69 +45,61 @@ def run(p: Playwright, username, password):
         print("Commencing candies claim")
         page.goto("https://www.coingecko.com/", timeout=0)
         page.wait_for_timeout(6_000)
+        print("homepage Opened")
     except BaseException:
         print("Could not access https://www.coingecko.com/")
         exit(1001)
-    try:
-        print("Commencing login action")
-        page.locator("span").filter(has_text="Login").click()
-        page.wait_for_timeout(5_000)
-        page.locator("#signInEmail").click()
-        page.wait_for_timeout(5_000)
-        page.locator("#signInEmail").fill(username)
-        page.wait_for_timeout(5_000)
-        page.locator("#signInPassword").click()
-        page.wait_for_timeout(6_000)
-        page.locator("#signInPassword").fill(password)
-        page.wait_for_timeout(5_000)
-        page.get_by_role("button", name="Login").click()
-        page.wait_for_timeout(10_000)
-        print("Login Succesfful")
-    except BaseException:
-        print('Cannot login')
-        exit(1002)
-    try:
-        page.get_by_role("link", name="coingecko candy jar").click()
-        page.wait_for_timeout(5_000)
-        #page.query_selector("button[data-action='click->points#claimCandy'][data-target='points.button']").click()
-        button = page.query_selector(".btn.btn-primary.col-12.collect-candy-button")
-        if button:
-            if "disabled" in button.get_attribute("class"):
-                print("Button is disabled")
-            else:
-                # button exist, proceed with clicking the button
-                button.click()
-                print("Succesfully claimed for today")
-                claimed += 1
-                print("Claimed: ", claimed)
-                page.wait_for_timeout(5_000)
-        else:
-            # button not found
-            print("Button not found")
-    except Exception as e:
-        print(e)
-        print("Cannot claim daily reward")
-        exit(1003)
+    # try:
+    #     print("Commencing login action")
+    #     page.locator("span").filter(has_text="Login").click()
+    #     page.wait_for_timeout(5_000)
+    #     page.locator("#signInEmail").click()
+    #     page.wait_for_timeout(5_000)
+    #     page.locator("#signInEmail").fill(username)
+    #     page.wait_for_timeout(5_000)
+    #     page.locator("#signInPassword").click()
+    #     page.wait_for_timeout(6_000)
+    #     page.locator("#signInPassword").fill(password)
+    #     page.wait_for_timeout(5_000)
+    #     page.get_by_role("button", name="Login").click()
+    #     page.wait_for_timeout(10_000)
+    #     print("Login Succesfful")
+    # except BaseException:
+    #     print('Cannot login')
+    #     exit(1002)
+    # try:
+    #     page.get_by_role("link", name="coingecko candy jar").click()
+    #     page.wait_for_timeout(5_000)
+    #     #page.query_selector("button[data-action='click->points#claimCandy'][data-target='points.button']").click()
+    #     button = page.query_selector(".btn.btn-primary.col-12.collect-candy-button")
+    #     if button:
+    #         if "disabled" in button.get_attribute("class"):
+    #             print("Button is disabled")
+    #         else:
+    #             # button exist, proceed with clicking the button
+    #             button.click()
+    #             print("Succesfully claimed for today")
+    #             claimed += 1
+    #             print("Claimed: ", claimed)
+    #             page.wait_for_timeout(5_000)
+    #     else:
+    #         # button not found
+    #         print("Button not found")
+    # except Exception as e:
+    #     print(e)
+    #     print("Cannot claim daily reward")
+    #     exit(1003)
 
     context.close()
     browser.close()
 
 
-def mine():
+def main():
     with sync_playwright() as p:
         for i, username in enumerate(usernames):
             run(p, username, passwords[i])
 
 
-
-schedule.every().day.at("00:15").do(lambda: mine())
-# schedule.every(10).minutes.do(job)
-# schedule.every(10).seconds.do(lambda: mine())
-
-def main():
-    while True:
-        schedule.run_pending()
-        time.sleep(30)
 
 if __name__ == '__main__':
     main()
