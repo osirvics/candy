@@ -45,7 +45,7 @@ def run(p: Playwright, username, password, index):
     global claimed
     global failed_indices
     print("Starting script")
-    browser = p.firefox.launch(headless= False)
+    browser = p.firefox.launch()
     context = browser.new_context()
     page = context.new_page()
 
@@ -111,7 +111,7 @@ def main():
         for i, username in enumerate(usernames):
             run(p, username, passwords[i], i)
         if len(failed_indices)>0:
-            print(f"The lenght is: {len(failed_indices)}")   
+            logger.info(f"The lenght is: {len(failed_indices)}")   
             retry_claim(p)
         
 
