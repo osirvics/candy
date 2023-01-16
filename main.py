@@ -32,14 +32,11 @@ p9 = os.environ['p9']
 p10 = os.environ['p10']
 
 
-# usernames = [u1, u2, u3, u4, u5, u6, u7, u8, u9, u10]
-# passwords = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]
+usernames = [u1, u2, u3, u4, u5, u6, u7, u8, u9, u10]
+passwords = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]
+
 failed_indices = []
 retried_indices = []
-
-usernames = [u9, u10]
-passwords = [p9, p10]
-
 
 claimed = 0
 
@@ -70,7 +67,7 @@ def run(p: Playwright, username, password, index):
         page.wait_for_timeout(5_000)
         page.locator("#signInEmail").click()
         page.wait_for_timeout(5_000)
-        
+
         page.locator("#signInEmail").fill(username)
         page.wait_for_timeout(5_000)
         page.locator("#signInPassword").click()
