@@ -101,7 +101,7 @@ def mine():
 
 
 
-schedule.every().day.at("01:02").do(lambda: mine())
+schedule.every().day.at("00:15").do(lambda: mine())
 # schedule.every(10).minutes.do(job)
 # schedule.every(10).seconds.do(lambda: mine())
 
