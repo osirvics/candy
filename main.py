@@ -60,7 +60,6 @@ def run(p: Playwright, username, password, index):
         context.close()
         browser.close()
         return
-
     try:
         logger.info("Commencing login action")
         page.locator("span").filter(has_text="Login").click()
@@ -114,7 +113,6 @@ def main():
             logger.info(f"The lenght is: {len(failed_indices)}")   
             retry_claim(p)
         
-
 def retry_claim(p):
     global retried_indices
     logger.info("********************retrying to claim**************************************")
