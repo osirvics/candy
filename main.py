@@ -31,13 +31,11 @@ p8 = os.environ['p8']
 p9 = os.environ['p9']
 p10 = os.environ['p10']
 
-
 usernames = [u1, u2, u3, u4, u5, u6, u7, u8, u9, u10]
 passwords = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]
 
 failed_indices = []
 retried_indices = []
-
 claimed = 0
 
 def run(p: Playwright, username, password, index):
@@ -116,7 +114,7 @@ def main():
         
 def retry_claim(p):
     global retried_indices
-    logger.info("********************retrying to claim**************************************")
+    logger.info("**************retrying to claim**************")
     for index in failed_indices:
         if index not in retried_indices:
             run(p, usernames[index], passwords[index], index)
