@@ -54,7 +54,7 @@ def run(p: Playwright, username, password, index):
         logger.info("Succesfully opened homepage")
     except BaseException:
         failed_indices.append(index)
-        logger.exception("Could not access https://www.coingecko.com/")
+        logger.exception(f"Could not access https://www.coingecko.com for {username}")
         context.close()
         browser.close()
         return
@@ -77,7 +77,7 @@ def run(p: Playwright, username, password, index):
         logger.info("Login succesful")
     except BaseException:
         failed_indices.append(index)
-        logger.exception("Login failed")
+        logger.exception(f"Login failed for {username}")
         context.close()
         browser.close()
         return      
