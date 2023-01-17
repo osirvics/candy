@@ -42,7 +42,6 @@ def run(p: Playwright, username, password, index):
     logger.info(f"Attempting to claim for:{username}")
     global claimed
     global failed_indices
-    print("Starting script")
     browser = p.firefox.launch()
     context = browser.new_context()
     page = context.new_page()
@@ -58,6 +57,7 @@ def run(p: Playwright, username, password, index):
         context.close()
         browser.close()
         return
+        
     try:
         logger.info("Commencing login action")
         page.locator("span").filter(has_text="Login").click()
@@ -83,7 +83,6 @@ def run(p: Playwright, username, password, index):
         return      
 
     try:
-        print("About to log in")
         page.get_by_role("link", name="coingecko candy jar").click()
         page.wait_for_timeout(5_000)
         button = page.query_selector(".btn.btn-primary.col-12.collect-candy-button")
@@ -114,7 +113,7 @@ def main():
         
 def retry_claim(p):
     global retried_indices
-    logger.info("**************retrying to claim**************")
+    logger.info("************** retrying candy claim **************")
     for index in failed_indices:
         if index not in retried_indices:
             run(p, usernames[index], passwords[index], index)
