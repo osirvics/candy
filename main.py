@@ -57,11 +57,11 @@ def run(p: Playwright, username, password, index):
         context.close()
         browser.close()
         return
-        
+
     try:
         logger.info("Commencing login action")
         page.locator("span").filter(has_text="Login").click()
-        page.wait_for_timeout(5_000)
+        page.wait_for_timeout(8_000)
         page.locator("#signInEmail").click()
         page.wait_for_timeout(5_000)
 
