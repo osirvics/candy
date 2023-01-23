@@ -1,10 +1,16 @@
 from playwright.sync_api import sync_playwright, Playwright
 from dotenv import load_dotenv
 import os
-import time
 import logging
 logger = logging.getLogger()
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(handlers=[logging.FileHandler(filename="./mainlog.txt", 
+                    encoding='utf-8', mode='a+'), logging.StreamHandler()],
+                    format="%(asctime)s %(name)s:%(levelname)s:%(message)s", 
+                    datefmt="%F %A %T", 
+                    level=logging.INFO)
+                    
+cities = ["Atlanta", "Charlotte", "Dallas",	"Kansas_City", "Manassas",	"New_York",	"Saint_Louis", "San_Francisco",
+"Buffalo",	"Chicago",	"Denver",	"Los_Angeles",	"Miami",	"Phoenix", "Salt_Lake_City", "Seattle"]
 
 #Load environment variables from .env file
 load_dotenv()
@@ -76,10 +82,12 @@ def run(p: Playwright, username, password, index):
 
         page.get_by_role("button", name="Login").click()
         page.wait_for_timeout(6_000)
-        logger.info("Login succesful")
+        div_element = page.query_selector(".unobtrusive-flash-message")
+        text = div_element.evaluate("element => element.innerText")
+        logger.info(text)
     except BaseException:
         failed_indices.append(index)
-        logger.exception("Login failed")
+        logger.exception(f"Login failed for {username} at index {index}")
         context.close()
         browser.close()
         return      

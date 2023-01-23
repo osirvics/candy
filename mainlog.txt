@@ -1,0 +1,27 @@
+2023-01-19 Thursday 11:52:11 root:INFO:Attempting to claim for:rachelmadison56@gmail.com
+2023-01-19 Thursday 11:52:13 root:INFO:Opening homepage
+2023-01-19 Thursday 11:52:23 root:INFO:Succesfully opened homepage
+2023-01-19 Thursday 11:52:23 root:INFO:Commencing login action
+2023-01-19 Thursday 11:52:57 root:INFO:Signed in successfully.
+2023-01-19 Thursday 11:53:03 root:INFO:Button not found
+2023-01-19 Thursday 11:53:03 root:INFO:Attempting to claim for:rickmort2022@gmail.com
+2023-01-19 Thursday 11:53:04 root:INFO:Opening homepage
+2023-01-19 Thursday 11:53:07 root:ERROR:Could not access https://www.coingecko.com/
+Traceback (most recent call last):
+  File "main.py", line 65, in run
+    page.goto("https://www.coingecko.com/")
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/sync_api/_generated.py", line 8961, in goto
+    self._sync(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_sync_base.py", line 102, in _sync
+    self._dispatcher_fiber.switch()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/sync_api/_context_manager.py", line 67, in greenlet_main
+    self._loop.run_until_complete(self._connection.run_as_sync())
+  File "/Users/kedvic/.pyenv/versions/3.8.13/lib/python3.8/asyncio/base_events.py", line 603, in run_until_complete
+    self.run_forever()
+  File "/Users/kedvic/.pyenv/versions/3.8.13/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+    self._run_once()
+  File "/Users/kedvic/.pyenv/versions/3.8.13/lib/python3.8/asyncio/base_events.py", line 1823, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/Users/kedvic/.pyenv/versions/3.8.13/lib/python3.8/selectors.py", line 558, in select
+    kev_list = self._selector.control(None, max_ev, timeout)
+KeyboardInterrupt
