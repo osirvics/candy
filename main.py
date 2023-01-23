@@ -1,6 +1,7 @@
 from playwright.sync_api import sync_playwright, Playwright
 from dotenv import load_dotenv
 import os
+import random
 import subprocess
 import logging
 logger = logging.getLogger()
@@ -9,11 +10,16 @@ logging.basicConfig(handlers=[logging.FileHandler(filename="./mainlog.txt",
                     format="%(asctime)s %(name)s:%(levelname)s:%(message)s", 
                     datefmt="%F %A %T", 
                     level=logging.INFO)
-                    
-cities = ["Atlanta", "Charlotte", "Dallas",	"Kansas_City", "Manassas",	"New_York",	"Saint_Louis", "San_Francisco",
-"Buffalo",	"Chicago",	"Denver",	"Los_Angeles",	"Miami",	"Phoenix", "Salt_Lake_City", "Seattle"]
 
-subprocess.run(["nordvpn", "status"])
+try:
+    cities = ["Athens", "Nicosia", "Dallas", "Kansas_City", "Manassas",	"Lisbon", "Saint_Louis", "Istanbul",
+    "Buffalo",	"Milan", "Denver", "Los_Angeles", "Berlin", "Phoenix", "Frankfurt", "Seattle"]
+    server = random.choice(cities)
+    subprocess.run(["nordvpn", "connect", server], check=True)
+    subprocess.run(["nordvpn", "status"], check=True)
+except subprocess.CalledProcessError as e:
+    print(f"An error occurred: {e}")
+    logger.exception(f"Failed to connect to Nordvpn")
 
 #Load environment variables from .env file
 load_dotenv()
@@ -114,6 +120,12 @@ def run(p: Playwright, username, password, index):
 
     context.close()
     browser.close()
+    try:
+        # Disconnect from the NordVPN server
+        subprocess.run(["nordvpn", "disconnect"], check=True)
+    except subprocess.CalledProcessError as e:
+        print(f"An error occurred: {e}")
+        logger.exception("Failed to disconnect from Nordvpn server")
 
 def main():
     with sync_playwright() as p:
