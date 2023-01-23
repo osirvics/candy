@@ -53,7 +53,7 @@ def run(p: Playwright, username, password, index):
     global claimed
     global failed_indices
     print("Starting script")
-    browser = p.firefox.launch(headless=False)
+    browser = p.firefox.launch()
     context = browser.new_context()
     page = context.new_page()
 
