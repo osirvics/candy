@@ -37,7 +37,6 @@ p8 = os.environ['p8']
 p9 = os.environ['p9']
 p10 = os.environ['p10']
 
-
 usernames = [u1, u2, u3, u4, u5, u6, u7, u8, u9, u10]
 passwords = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]
 
