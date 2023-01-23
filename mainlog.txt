@@ -25,3 +25,399 @@ Traceback (most recent call last):
   File "/Users/kedvic/.pyenv/versions/3.8.13/lib/python3.8/selectors.py", line 558, in select
     kev_list = self._selector.control(None, max_ev, timeout)
 KeyboardInterrupt
+2023-01-23 Monday 15:32:21 root:INFO:Attempting to claim for:rachelmadison56@gmail.com
+2023-01-23 Monday 15:32:22 root:INFO:Opening homepage
+2023-01-23 Monday 15:32:37 root:ERROR:Could not access https://www.coingecko.com/
+Traceback (most recent call last):
+  File "main.py", line 59, in run
+    page.goto("https://www.coingecko.com/")
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/sync_api/_generated.py", line 8961, in goto
+    self._sync(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_sync_base.py", line 104, in _sync
+    return task.result()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_page.py", line 491, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_frame.py", line 147, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 44, in send
+    return await self._connection.wrap_api_call(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 419, in wrap_api_call
+    return await cb()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 79, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._api_types.Error: NS_ERROR_NET_INTERRUPT
+=========================== logs ===========================
+navigating to "https://www.coingecko.com/", waiting until "load"
+============================================================
+2023-01-23 Monday 15:32:37 root:INFO:Attempting to claim for:rickmort2022@gmail.com
+2023-01-23 Monday 15:32:38 root:INFO:Opening homepage
+2023-01-23 Monday 15:32:54 root:ERROR:Could not access https://www.coingecko.com/
+Traceback (most recent call last):
+  File "main.py", line 59, in run
+    page.goto("https://www.coingecko.com/")
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/sync_api/_generated.py", line 8961, in goto
+    self._sync(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_sync_base.py", line 104, in _sync
+    return task.result()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_page.py", line 491, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_frame.py", line 147, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 44, in send
+    return await self._connection.wrap_api_call(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 419, in wrap_api_call
+    return await cb()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 79, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._api_types.Error: NS_ERROR_NET_INTERRUPT
+=========================== logs ===========================
+navigating to "https://www.coingecko.com/", waiting until "load"
+============================================================
+2023-01-23 Monday 15:32:54 root:INFO:Attempting to claim for:osirvics@gmail.com
+2023-01-23 Monday 15:32:54 root:INFO:Opening homepage
+2023-01-23 Monday 15:33:10 root:ERROR:Could not access https://www.coingecko.com/
+Traceback (most recent call last):
+  File "main.py", line 59, in run
+    page.goto("https://www.coingecko.com/")
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/sync_api/_generated.py", line 8961, in goto
+    self._sync(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_sync_base.py", line 104, in _sync
+    return task.result()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_page.py", line 491, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_frame.py", line 147, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 44, in send
+    return await self._connection.wrap_api_call(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 419, in wrap_api_call
+    return await cb()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 79, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._api_types.Error: NS_ERROR_NET_INTERRUPT
+=========================== logs ===========================
+navigating to "https://www.coingecko.com/", waiting until "load"
+============================================================
+2023-01-23 Monday 15:33:10 root:INFO:Attempting to claim for:edu.ogar@gmail.com
+2023-01-23 Monday 15:33:11 root:INFO:Opening homepage
+2023-01-23 Monday 15:33:26 root:ERROR:Could not access https://www.coingecko.com/
+Traceback (most recent call last):
+  File "main.py", line 59, in run
+    page.goto("https://www.coingecko.com/")
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/sync_api/_generated.py", line 8961, in goto
+    self._sync(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_sync_base.py", line 104, in _sync
+    return task.result()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_page.py", line 491, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_frame.py", line 147, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 44, in send
+    return await self._connection.wrap_api_call(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 419, in wrap_api_call
+    return await cb()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 79, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._api_types.Error: NS_ERROR_NET_INTERRUPT
+=========================== logs ===========================
+navigating to "https://www.coingecko.com/", waiting until "load"
+============================================================
+2023-01-23 Monday 15:33:26 root:INFO:Attempting to claim for:victor46539@gmail.com
+2023-01-23 Monday 15:33:27 root:INFO:Opening homepage
+2023-01-23 Monday 15:33:42 root:ERROR:Could not access https://www.coingecko.com/
+Traceback (most recent call last):
+  File "main.py", line 59, in run
+    page.goto("https://www.coingecko.com/")
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/sync_api/_generated.py", line 8961, in goto
+    self._sync(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_sync_base.py", line 104, in _sync
+    return task.result()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_page.py", line 491, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_frame.py", line 147, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 44, in send
+    return await self._connection.wrap_api_call(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 419, in wrap_api_call
+    return await cb()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 79, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._api_types.Error: NS_ERROR_NET_INTERRUPT
+=========================== logs ===========================
+navigating to "https://www.coingecko.com/", waiting until "load"
+============================================================
+2023-01-23 Monday 15:33:43 root:INFO:Attempting to claim for:boltnode1@gmail.com
+2023-01-23 Monday 15:33:43 root:INFO:Opening homepage
+2023-01-23 Monday 15:33:59 root:ERROR:Could not access https://www.coingecko.com/
+Traceback (most recent call last):
+  File "main.py", line 59, in run
+    page.goto("https://www.coingecko.com/")
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/sync_api/_generated.py", line 8961, in goto
+    self._sync(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_sync_base.py", line 104, in _sync
+    return task.result()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_page.py", line 491, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_frame.py", line 147, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 44, in send
+    return await self._connection.wrap_api_call(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 419, in wrap_api_call
+    return await cb()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 79, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._api_types.Error: NS_ERROR_NET_INTERRUPT
+=========================== logs ===========================
+navigating to "https://www.coingecko.com/", waiting until "load"
+============================================================
+2023-01-23 Monday 15:33:59 root:INFO:Attempting to claim for:kedvic@gmail.com
+2023-01-23 Monday 15:34:00 root:INFO:Opening homepage
+2023-01-23 Monday 15:34:16 root:ERROR:Could not access https://www.coingecko.com/
+Traceback (most recent call last):
+  File "main.py", line 59, in run
+    page.goto("https://www.coingecko.com/")
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/sync_api/_generated.py", line 8961, in goto
+    self._sync(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_sync_base.py", line 104, in _sync
+    return task.result()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_page.py", line 491, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_frame.py", line 147, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 44, in send
+    return await self._connection.wrap_api_call(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 419, in wrap_api_call
+    return await cb()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 79, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._api_types.Error: NS_ERROR_NET_INTERRUPT
+=========================== logs ===========================
+navigating to "https://www.coingecko.com/", waiting until "load"
+============================================================
+2023-01-23 Monday 15:34:16 root:INFO:Attempting to claim for:osirvics@yahoo.com
+2023-01-23 Monday 15:34:17 root:INFO:Opening homepage
+2023-01-23 Monday 15:37:40 root:ERROR:Could not access https://www.coingecko.com/
+Traceback (most recent call last):
+  File "main.py", line 59, in run
+    page.goto("https://www.coingecko.com/")
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/sync_api/_generated.py", line 8961, in goto
+    self._sync(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_sync_base.py", line 104, in _sync
+    return task.result()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_page.py", line 491, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_frame.py", line 147, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 44, in send
+    return await self._connection.wrap_api_call(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 419, in wrap_api_call
+    return await cb()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 79, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._api_types.TimeoutError: Timeout 30000ms exceeded.
+=========================== logs ===========================
+navigating to "https://www.coingecko.com/", waiting until "load"
+============================================================
+2023-01-23 Monday 15:37:41 root:INFO:Attempting to claim for:eduvictorogar@gmail.com
+2023-01-23 Monday 15:37:42 root:INFO:Opening homepage
+2023-01-23 Monday 15:37:58 root:ERROR:Could not access https://www.coingecko.com/
+Traceback (most recent call last):
+  File "main.py", line 59, in run
+    page.goto("https://www.coingecko.com/")
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/sync_api/_generated.py", line 8961, in goto
+    self._sync(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_sync_base.py", line 104, in _sync
+    return task.result()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_page.py", line 491, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_frame.py", line 147, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 44, in send
+    return await self._connection.wrap_api_call(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 419, in wrap_api_call
+    return await cb()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 79, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._api_types.Error: NS_ERROR_NET_INTERRUPT
+=========================== logs ===========================
+navigating to "https://www.coingecko.com/", waiting until "load"
+============================================================
+2023-01-23 Monday 15:37:58 root:INFO:Attempting to claim for:johndaavoo@gmail.com
+2023-01-23 Monday 15:37:59 root:INFO:Opening homepage
+2023-01-23 Monday 15:38:14 root:ERROR:Could not access https://www.coingecko.com/
+Traceback (most recent call last):
+  File "main.py", line 59, in run
+    page.goto("https://www.coingecko.com/")
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/sync_api/_generated.py", line 8961, in goto
+    self._sync(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_sync_base.py", line 104, in _sync
+    return task.result()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_page.py", line 491, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_frame.py", line 147, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 44, in send
+    return await self._connection.wrap_api_call(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 419, in wrap_api_call
+    return await cb()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 79, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._api_types.Error: NS_ERROR_NET_INTERRUPT
+=========================== logs ===========================
+navigating to "https://www.coingecko.com/", waiting until "load"
+============================================================
+2023-01-23 Monday 15:38:15 root:INFO:The lenght is: 10
+2023-01-23 Monday 15:38:15 root:INFO:********************retrying to claim**************************************
+2023-01-23 Monday 15:38:15 root:INFO:Attempting to claim for:rachelmadison56@gmail.com
+2023-01-23 Monday 15:38:15 root:INFO:Opening homepage
+2023-01-23 Monday 15:38:31 root:ERROR:Could not access https://www.coingecko.com/
+Traceback (most recent call last):
+  File "main.py", line 59, in run
+    page.goto("https://www.coingecko.com/")
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/sync_api/_generated.py", line 8961, in goto
+    self._sync(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_sync_base.py", line 104, in _sync
+    return task.result()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_page.py", line 491, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_frame.py", line 147, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 44, in send
+    return await self._connection.wrap_api_call(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 419, in wrap_api_call
+    return await cb()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 79, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._api_types.Error: NS_ERROR_NET_INTERRUPT
+=========================== logs ===========================
+navigating to "https://www.coingecko.com/", waiting until "load"
+============================================================
+2023-01-23 Monday 15:38:31 root:INFO:Attempting to claim for:rickmort2022@gmail.com
+2023-01-23 Monday 15:38:32 root:INFO:Opening homepage
+2023-01-23 Monday 15:38:47 root:ERROR:Could not access https://www.coingecko.com/
+Traceback (most recent call last):
+  File "main.py", line 59, in run
+    page.goto("https://www.coingecko.com/")
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/sync_api/_generated.py", line 8961, in goto
+    self._sync(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_sync_base.py", line 104, in _sync
+    return task.result()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_page.py", line 491, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_frame.py", line 147, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 44, in send
+    return await self._connection.wrap_api_call(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 419, in wrap_api_call
+    return await cb()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_connection.py", line 79, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._api_types.Error: NS_ERROR_NET_INTERRUPT
+=========================== logs ===========================
+navigating to "https://www.coingecko.com/", waiting until "load"
+============================================================
+2023-01-23 Monday 15:38:47 root:INFO:Attempting to claim for:osirvics@gmail.com
+2023-01-23 Monday 15:38:48 root:INFO:Opening homepage
+2023-01-23 Monday 15:39:01 root:ERROR:Could not access https://www.coingecko.com/
+Traceback (most recent call last):
+  File "main.py", line 59, in run
+    page.goto("https://www.coingecko.com/")
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/sync_api/_generated.py", line 8961, in goto
+    self._sync(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_sync_base.py", line 102, in _sync
+    self._dispatcher_fiber.switch()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/sync_api/_context_manager.py", line 67, in greenlet_main
+    self._loop.run_until_complete(self._connection.run_as_sync())
+  File "/Users/kedvic/.pyenv/versions/3.8.13/lib/python3.8/asyncio/base_events.py", line 603, in run_until_complete
+    self.run_forever()
+  File "/Users/kedvic/.pyenv/versions/3.8.13/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+    self._run_once()
+  File "/Users/kedvic/.pyenv/versions/3.8.13/lib/python3.8/asyncio/base_events.py", line 1823, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/Users/kedvic/.pyenv/versions/3.8.13/lib/python3.8/selectors.py", line 558, in select
+    kev_list = self._selector.control(None, max_ev, timeout)
+KeyboardInterrupt
+2023-01-23 Monday 15:40:06 root:INFO:Attempting to claim for:rachelmadison56@gmail.com
+2023-01-23 Monday 15:40:07 root:INFO:Opening homepage
+2023-01-23 Monday 15:40:12 root:ERROR:Could not access https://www.coingecko.com/
+Traceback (most recent call last):
+  File "main.py", line 59, in run
+    page.goto("https://www.coingecko.com/")
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/sync_api/_generated.py", line 8961, in goto
+    self._sync(
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/_impl/_sync_base.py", line 102, in _sync
+    self._dispatcher_fiber.switch()
+  File "/Users/kedvic/.pyenv/versions/stress/lib/python3.8/site-packages/playwright/sync_api/_context_manager.py", line 67, in greenlet_main
+    self._loop.run_until_complete(self._connection.run_as_sync())
+  File "/Users/kedvic/.pyenv/versions/3.8.13/lib/python3.8/asyncio/base_events.py", line 603, in run_until_complete
+    self.run_forever()
+  File "/Users/kedvic/.pyenv/versions/3.8.13/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+    self._run_once()
+  File "/Users/kedvic/.pyenv/versions/3.8.13/lib/python3.8/asyncio/base_events.py", line 1823, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/Users/kedvic/.pyenv/versions/3.8.13/lib/python3.8/selectors.py", line 558, in select
+    kev_list = self._selector.control(None, max_ev, timeout)
+KeyboardInterrupt
+2023-01-23 Monday 15:40:34 root:INFO:Attempting to claim for:rachelmadison56@gmail.com
+2023-01-23 Monday 15:40:35 root:INFO:Opening homepage
+2023-01-23 Monday 15:40:46 root:INFO:Succesfully opened homepage
+2023-01-23 Monday 15:40:46 root:INFO:Commencing login action
+2023-01-23 Monday 15:41:19 root:INFO:Signed in successfully.
+2023-01-23 Monday 15:41:25 root:INFO:Button not found
+2023-01-23 Monday 15:41:25 root:INFO:Attempting to claim for:rickmort2022@gmail.com
+2023-01-23 Monday 15:41:26 root:INFO:Opening homepage
+2023-01-23 Monday 15:41:37 root:INFO:Succesfully opened homepage
+2023-01-23 Monday 15:41:37 root:INFO:Commencing login action
+2023-01-23 Monday 15:42:10 root:INFO:Signed in successfully.
+2023-01-23 Monday 15:42:16 root:INFO:Button not found
+2023-01-23 Monday 15:42:16 root:INFO:Attempting to claim for:osirvics@gmail.com
+2023-01-23 Monday 15:42:17 root:INFO:Opening homepage
+2023-01-23 Monday 15:42:28 root:INFO:Succesfully opened homepage
+2023-01-23 Monday 15:42:28 root:INFO:Commencing login action
+2023-01-23 Monday 15:43:01 root:INFO:Signed in successfully.
+2023-01-23 Monday 15:43:08 root:INFO:Button not found
+2023-01-23 Monday 15:43:08 root:INFO:Attempting to claim for:edu.ogar@gmail.com
+2023-01-23 Monday 15:43:09 root:INFO:Opening homepage
+2023-01-23 Monday 15:43:20 root:INFO:Succesfully opened homepage
+2023-01-23 Monday 15:43:20 root:INFO:Commencing login action
+2023-01-23 Monday 15:43:53 root:INFO:Signed in successfully.
+2023-01-23 Monday 15:43:59 root:INFO:Button not found
+2023-01-23 Monday 15:43:59 root:INFO:Attempting to claim for:victor46539@gmail.com
+2023-01-23 Monday 15:44:00 root:INFO:Opening homepage
+2023-01-23 Monday 15:44:11 root:INFO:Succesfully opened homepage
+2023-01-23 Monday 15:44:11 root:INFO:Commencing login action
+2023-01-23 Monday 15:44:45 root:INFO:Signed in successfully.
+2023-01-23 Monday 15:44:50 root:INFO:Button not found
+2023-01-23 Monday 15:44:51 root:INFO:Attempting to claim for:boltnode1@gmail.com
+2023-01-23 Monday 15:44:52 root:INFO:Opening homepage
+2023-01-23 Monday 15:45:03 root:INFO:Succesfully opened homepage
+2023-01-23 Monday 15:45:03 root:INFO:Commencing login action
+2023-01-23 Monday 15:45:36 root:INFO:Signed in successfully.
+2023-01-23 Monday 15:45:41 root:INFO:Button not found
+2023-01-23 Monday 15:45:42 root:INFO:Attempting to claim for:kedvic@gmail.com
+2023-01-23 Monday 15:45:43 root:INFO:Opening homepage
+2023-01-23 Monday 15:45:53 root:INFO:Succesfully opened homepage
+2023-01-23 Monday 15:45:53 root:INFO:Commencing login action
+2023-01-23 Monday 15:46:29 root:INFO:Signed in successfully.
+2023-01-23 Monday 15:46:35 root:INFO:Succesfully claimed candy for today
+2023-01-23 Monday 15:46:35 root:INFO:Claimed for 1 account so far
+2023-01-23 Monday 15:46:40 root:INFO:Attempting to claim for:osirvics@yahoo.com
+2023-01-23 Monday 15:46:41 root:INFO:Opening homepage
+2023-01-23 Monday 15:46:53 root:INFO:Succesfully opened homepage
+2023-01-23 Monday 15:46:53 root:INFO:Commencing login action
+2023-01-23 Monday 15:47:27 root:INFO:Signed in successfully.
+2023-01-23 Monday 15:47:33 root:INFO:Succesfully claimed candy for today
+2023-01-23 Monday 15:47:33 root:INFO:Claimed for 2 account so far
+2023-01-23 Monday 15:47:38 root:INFO:Attempting to claim for:eduvictorogar@gmail.com
+2023-01-23 Monday 15:47:39 root:INFO:Opening homepage
+2023-01-23 Monday 15:48:02 root:INFO:Succesfully opened homepage
+2023-01-23 Monday 15:48:02 root:INFO:Commencing login action
+2023-01-23 Monday 15:48:35 root:INFO:Signed in successfully.
+2023-01-23 Monday 15:48:41 root:INFO:Succesfully claimed candy for today
+2023-01-23 Monday 15:48:41 root:INFO:Claimed for 3 account so far
+2023-01-23 Monday 15:48:46 root:INFO:Attempting to claim for:johndaavoo@gmail.com
+2023-01-23 Monday 15:48:47 root:INFO:Opening homepage
+2023-01-23 Monday 15:48:59 root:INFO:Succesfully opened homepage
+2023-01-23 Monday 15:48:59 root:INFO:Commencing login action
+2023-01-23 Monday 15:49:34 root:INFO:Signed in successfully.
+2023-01-23 Monday 15:49:39 root:INFO:Succesfully claimed candy for today
+2023-01-23 Monday 15:49:39 root:INFO:Claimed for 4 account so far

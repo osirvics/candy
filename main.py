@@ -1,6 +1,7 @@
 from playwright.sync_api import sync_playwright, Playwright
 from dotenv import load_dotenv
 import os
+import subprocess
 import logging
 logger = logging.getLogger()
 logging.basicConfig(handlers=[logging.FileHandler(filename="./mainlog.txt", 
@@ -11,6 +12,8 @@ logging.basicConfig(handlers=[logging.FileHandler(filename="./mainlog.txt",
                     
 cities = ["Atlanta", "Charlotte", "Dallas",	"Kansas_City", "Manassas",	"New_York",	"Saint_Louis", "San_Francisco",
 "Buffalo",	"Chicago",	"Denver",	"Los_Angeles",	"Miami",	"Phoenix", "Salt_Lake_City", "Seattle"]
+
+subprocess.run(["nordvpn", "status"])
 
 #Load environment variables from .env file
 load_dotenv()
@@ -50,7 +53,7 @@ def run(p: Playwright, username, password, index):
     global claimed
     global failed_indices
     print("Starting script")
-    browser = p.firefox.launch()
+    browser = p.firefox.launch(headless=False)
     context = browser.new_context()
     page = context.new_page()
 
@@ -122,7 +125,7 @@ def main():
         
 def retry_claim(p):
     global retried_indices
-    logger.info("********************retrying to claim**************************************")
+    logger.info("********************retrying to claim***********************************")
     for index in failed_indices:
         if index not in retried_indices:
             run(p, usernames[index], passwords[index], index)
