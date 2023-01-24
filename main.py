@@ -11,10 +11,9 @@ logging.basicConfig(handlers=[logging.FileHandler(filename="./mainlog.txt",
                     format="%(asctime)s %(name)s:%(levelname)s:%(message)s", 
                     datefmt="%F %A %T", 
                     level=logging.INFO)
-
-try:
-    cities = ["Athens", "Nicosia", "Dallas", "Kansas_City", "Manassas",	"Lisbon", "Saint_Louis", "Istanbul",
+cities = ["Athens", "Nicosia", "Dallas", "Kansas_City", "Manassas",	"Lisbon", "Saint_Louis", "Istanbul",
     "Buffalo",	"Milan", "Denver", "Los_Angeles", "Berlin", "Phoenix", "Frankfurt", "Seattle"]
+try:
     server = random.choice(cities)
     subprocess.run(["nordvpn", "connect", server])
     time.sleep(30)
@@ -136,12 +135,21 @@ def main():
         for i, username in enumerate(usernames):
             run(p, username, passwords[i], i)
         if len(failed_indices)>0:
-            logger.info(f"The lenght is: {len(failed_indices)}")   
+            logger.info(f"The lenght is: {len(failed_indices)}")
+            try:
+                server = random.choice(cities)
+                subprocess.run(["nordvpn", "connect", server])
+                time.sleep(30)
+                result = subprocess.run(["nordvpn", "status"], stdout=subprocess.PIPE)
+                logger.info(f"The connection status is: {result.stdout.decode()}")
+            except subprocess.CalledProcessError as e:
+                print(f"An error occurred: {e}")
+                logger.exception(f"Failed to connect to Nordvpn")   
             retry_claim(p)
         
 def retry_claim(p):
     global retried_indices
-    logger.info("********************retrying to claim***********************************")
+    logger.info("********************retrying to claim*****************")
     for index in failed_indices:
         if index not in retried_indices:
             run(p, usernames[index], passwords[index], index)
