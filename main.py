@@ -11,8 +11,8 @@ logging.basicConfig(handlers=[logging.FileHandler(filename="./mainlog.txt",
                     format="%(asctime)s %(name)s:%(levelname)s:%(message)s", 
                     datefmt="%F %A %T", 
                     level=logging.INFO)
-cities = ["Athens", "Nicosia", "Dallas", "Kansas_City", "Manassas",	"Lisbon", "Saint_Louis", "Istanbul",
-    "Buffalo",	"Milan", "Denver", "Los_Angeles", "Berlin", "Phoenix", "Frankfurt", "Seattle"]
+cities = ["Athens", "Nicosia", "Dallas", "Glasgow", "Manassas",	"Lisbon", "Manchester", "Istanbul",
+    "Buffalo",	"Milan", "Denver", "Helsinki", "Berlin", "Phoenix", "Frankfurt", "Seattle"]
 try:
     server = random.choice(cities)
     subprocess.run(["nordvpn", "connect", server])
