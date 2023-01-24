@@ -2,6 +2,7 @@ from playwright.sync_api import sync_playwright, Playwright
 from dotenv import load_dotenv
 import os
 import random
+import time
 import subprocess
 import logging
 logger = logging.getLogger()
@@ -15,8 +16,10 @@ try:
     cities = ["Athens", "Nicosia", "Dallas", "Kansas_City", "Manassas",	"Lisbon", "Saint_Louis", "Istanbul",
     "Buffalo",	"Milan", "Denver", "Los_Angeles", "Berlin", "Phoenix", "Frankfurt", "Seattle"]
     server = random.choice(cities)
-    subprocess.run(["nordvpn", "connect", server], check=True)
-    subprocess.run(["nordvpn", "status"], check=True)
+    subprocess.run(["nordvpn", "connect", server])
+    time.sleep(30)
+    result = subprocess.run(["nordvpn", "status"], stdout=subprocess.PIPE)
+    logger.info(f"The connection status is: {result.stdout.decode()}")
 except subprocess.CalledProcessError as e:
     print(f"An error occurred: {e}")
     logger.exception(f"Failed to connect to Nordvpn")
@@ -26,28 +29,31 @@ load_dotenv()
 
 #Get specific environment variables
 u1 = os.environ['u1']
-u2 = os.environ['u2']
-u3 = os.environ['u3']
-u4 = os.environ['u4']
-u5 = os.environ['u5']
-u6 = os.environ['u6']
-u7 = os.environ['u7']
-u8 = os.environ['u8']
-u9 = os.environ['u9']
-u10 = os.environ['u10']
+# u2 = os.environ['u2']
+# u3 = os.environ['u3']
+# u4 = os.environ['u4']
+# u5 = os.environ['u5']
+# u6 = os.environ['u6']
+# u7 = os.environ['u7']
+# u8 = os.environ['u8']
+# u9 = os.environ['u9']
+# u10 = os.environ['u10']
 p1 = os.environ['p1']
-p2 = os.environ['p2']
-p3 = os.environ['p3']
-p4 = os.environ['p4']
-p5 = os.environ['p5']
-p6 = os.environ['p6']
-p7 = os.environ['p7']
-p8 = os.environ['p8']
-p9 = os.environ['p9']
-p10 = os.environ['p10']
+# p2 = os.environ['p2']
+# p3 = os.environ['p3']
+# p4 = os.environ['p4']
+# p5 = os.environ['p5']
+# p6 = os.environ['p6']
+# p7 = os.environ['p7']
+# p8 = os.environ['p8']
+# p9 = os.environ['p9']
+# p10 = os.environ['p10']
 
-usernames = [u1, u2, u3, u4, u5, u6, u7, u8, u9, u10]
-passwords = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]
+# usernames = [u1, u2, u3, u4, u5, u6, u7, u8, u9, u10]
+# passwords = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]
+
+usernames = [u1]
+passwords = [p1]
 
 failed_indices = []
 retried_indices = []
