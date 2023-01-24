@@ -55,6 +55,19 @@ passwords = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]
 failed_indices = []
 retried_indices = []
 
+browsers = ["chronium", "firefox", "webkit"]
+
+
+def get_browser(p: Playwright):
+    browser = random.choice(browsers)
+    if browser == "chronium":
+        return p.chromium.launch()
+    elif browser == "firefox":
+        return p.firefox.launch()
+    else:
+        return p.webkit.launch()
+
+
 claimed = 0
 
 def run(p: Playwright, username, password, index):
@@ -62,7 +75,7 @@ def run(p: Playwright, username, password, index):
     global claimed
     global failed_indices
     print("Starting script")
-    browser = p.firefox.launch()
+    browser = get_browser(p)
     context = browser.new_context()
     page = context.new_page()
 
