@@ -16,7 +16,7 @@ cities = ["Athens", "Nicosia", "Dallas", "Glasgow", "Manassas",	"Lisbon", "Manch
 try:
     server = random.choice(cities)
     subprocess.run(["nordvpn", "connect", server])
-    time.sleep(30)
+    time.sleep(120)
     result = subprocess.run(["nordvpn", "status"], stdout=subprocess.PIPE)
     logger.info(f"The connection status is: {result.stdout.decode()}")
 except subprocess.CalledProcessError as e:
