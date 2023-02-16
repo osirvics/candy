@@ -1,7 +1,6 @@
 from playwright.sync_api import sync_playwright, Playwright
 from dotenv import load_dotenv
 import os
-import time
 import logging
 logger = logging.getLogger()
 logging.basicConfig(level=logging.INFO)
@@ -34,6 +33,7 @@ p10 = os.environ['p10']
 usernames = [u1, u2, u3, u4, u5, u6, u7, u8, u9, u10]
 passwords = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]
 
+
 failed_indices = []
 retried_indices = []
 claimed = 0
@@ -42,14 +42,14 @@ def run(p: Playwright, username, password, index):
     logger.info(f"Attempting to claim for:{username}")
     global claimed
     global failed_indices
-    browser = p.chromium.launch(headless=False)
+    browser = p.firefox.launch(headless= False)
     context = browser.new_context()
     page = context.new_page()
 
     try:
         logger.info("Opening homepage")
         page.goto("https://www.coingecko.com/")
-        page.wait_for_timeout(6_000)
+        page.wait_for_timeout(1_000)
         logger.info("Succesfully opened homepage")
     except BaseException:
         failed_indices.append(index)
@@ -60,20 +60,21 @@ def run(p: Playwright, username, password, index):
 
     try:
         logger.info("Commencing login action")
-        page.locator("span").filter(has_text="Login").click()
-        page.wait_for_timeout(8_000)
+        page.locator("span").filter(has_text="Login").nth(1).click()
+        #page.locator("span").filter(has_text="Login").click()
+        page.wait_for_timeout(3_000)
         page.locator("#signInEmail").click()
-        page.wait_for_timeout(5_000)
+        page.wait_for_timeout(3_000)
 
         page.locator("#signInEmail").fill(username)
-        page.wait_for_timeout(5_000)
+        page.wait_for_timeout(3_000)
         page.locator("#signInPassword").click()
-        page.wait_for_timeout(6_000)
+        page.wait_for_timeout(3_000)
         page.locator("#signInPassword").fill(password)
-        page.wait_for_timeout(5_000)
+        page.wait_for_timeout(3_000)
 
         page.get_by_role("button", name="Login").click()
-        page.wait_for_timeout(6_000)
+        page.wait_for_timeout(3_000)
         logger.info("Login succesful")
     except BaseException:
         failed_indices.append(index)
@@ -81,10 +82,9 @@ def run(p: Playwright, username, password, index):
         context.close()
         browser.close()
         return      
-
     try:
         page.get_by_role("link", name="coingecko candy jar").click()
-        page.wait_for_timeout(5_000)
+        page.wait_for_timeout(3_000)
         button = page.query_selector(".btn.btn-primary.col-12.collect-candy-button")
         if button:
             if "disabled" in button.get_attribute("class"):
@@ -94,7 +94,7 @@ def run(p: Playwright, username, password, index):
                 logger.info("Succesfully claimed candy for today")
                 claimed += 1
                 logger.info(f"Claimed for {claimed} account so far")
-                page.wait_for_timeout(5_000)
+                page.wait_for_timeout(2_000)
         else:
             logger.info("Button not found")
     except BaseException:
@@ -121,4 +121,3 @@ def retry_claim(p):
 
 if __name__ == '__main__':
     main()
-
