@@ -96,7 +96,7 @@ def run(p: Playwright, username, password, index):
                 logger.info(f"Claimed for {claimed} account so far")
                 page.wait_for_timeout(2_000)
         else:
-            logger.info("Button not found")
+            logger.info("Already claimed for today")
     except BaseException:
         logger.exception("Failed to claim candy")
 
