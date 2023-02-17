@@ -8,31 +8,8 @@ logging.basicConfig(level=logging.INFO)
 #Load environment variables from .env file
 load_dotenv()
 
-#Get specific environment variables
-u1 = os.environ['u1']
-u2 = os.environ['u2']
-u3 = os.environ['u3']
-u4 = os.environ['u4']
-u5 = os.environ['u5']
-u6 = os.environ['u6']
-u7 = os.environ['u7']
-u8 = os.environ['u8']
-u9 = os.environ['u9']
-u10 = os.environ['u10']
-p1 = os.environ['p1']
-p2 = os.environ['p2']
-p3 = os.environ['p3']
-p4 = os.environ['p4']
-p5 = os.environ['p5']
-p6 = os.environ['p6']
-p7 = os.environ['p7']
-p8 = os.environ['p8']
-p9 = os.environ['p9']
-p10 = os.environ['p10']
-
-usernames = [u1, u2, u3, u4, u5, u6, u7, u8, u9, u10]
-passwords = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]
-
+usernames = [os.environ[f"u{i}"] for i in range(1, 11)]
+passwords = [os.environ[f"p{i}"] for i in range(1, 11)]
 
 failed_indices = []
 retried_indices = []
@@ -42,14 +19,14 @@ def run(p: Playwright, username, password, index):
     logger.info(f"Attempting to claim for:{username}")
     global claimed
     global failed_indices
-    browser = p.firefox.launch(headless= False)
+    browser = p.firefox.launch()
     context = browser.new_context()
     page = context.new_page()
 
     try:
         logger.info("Opening homepage")
         page.goto("https://www.coingecko.com/")
-        page.wait_for_timeout(1_000)
+        page.wait_for_timeout(3_000)
         logger.info("Succesfully opened homepage")
     except BaseException:
         failed_indices.append(index)
@@ -61,7 +38,6 @@ def run(p: Playwright, username, password, index):
     try:
         logger.info("Commencing login action")
         page.locator("span").filter(has_text="Login").nth(1).click()
-        #page.locator("span").filter(has_text="Login").click()
         page.wait_for_timeout(3_000)
         page.locator("#signInEmail").click()
         page.wait_for_timeout(3_000)
