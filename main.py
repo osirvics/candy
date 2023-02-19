@@ -19,7 +19,7 @@ def run(p: Playwright, username, password, index):
     logger.info(f"Attempting to claim for:{username}")
     global claimed
     global failed_indices
-    browser = p.firefox.launch()
+    browser = p.firefox.launch(headless=False)
     context = browser.new_context()
     page = context.new_page()
 
