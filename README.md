@@ -1,6 +1,6 @@
 # Coingecko Candy Jar
 
-A Python script that allows you to claim your daily reward from Coingecko.
+A Python script that allows you to claim your daily candy reward from Coingecko.
 
 ## Requirements
 - [playwright](https://github.com/microsoft/playwright)
