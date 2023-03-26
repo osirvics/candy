@@ -26,7 +26,7 @@ def run(p: Playwright, username, password, index):
     try:
         logger.info("Opening homepage")
         page.goto("https://www.coingecko.com/")
-        page.wait_for_timeout(3_000)
+        page.wait_for_timeout(1_000)
         logger.info("Succesfully opened homepage")
     except BaseException:
         failed_indices.append(index)
@@ -37,20 +37,20 @@ def run(p: Playwright, username, password, index):
 
     try:
         logger.info("Commencing login action")
-        page.locator("span").filter(has_text="Login").nth(1).click()
-        page.wait_for_timeout(3_000)
+        page.locator("span").filter(has_text="Login").nth(2).click()
+        page.wait_for_timeout(1_000)
         page.locator("#signInEmail").click()
-        page.wait_for_timeout(3_000)
+        page.wait_for_timeout(1_000)
 
         page.locator("#signInEmail").fill(username)
-        page.wait_for_timeout(3_000)
+        page.wait_for_timeout(1_000)
         page.locator("#signInPassword").click()
-        page.wait_for_timeout(3_000)
+        page.wait_for_timeout(1_000)
         page.locator("#signInPassword").fill(password)
-        page.wait_for_timeout(3_000)
+        page.wait_for_timeout(1_000)
 
         page.get_by_role("button", name="Login").click()
-        page.wait_for_timeout(3_000)
+        page.wait_for_timeout(1_000)
         logger.info("Login succesful")
     except BaseException:
         failed_indices.append(index)
@@ -60,7 +60,7 @@ def run(p: Playwright, username, password, index):
         return      
     try:
         page.get_by_role("link", name="coingecko candy jar").click()
-        page.wait_for_timeout(3_000)
+        page.wait_for_timeout(2_000)
         button = page.query_selector(".btn.btn-primary.col-12.collect-candy-button")
         if button:
             if "disabled" in button.get_attribute("class"):
@@ -70,7 +70,7 @@ def run(p: Playwright, username, password, index):
                 logger.info("Succesfully claimed candy for today")
                 claimed += 1
                 logger.info(f"Claimed for {claimed} account so far")
-                page.wait_for_timeout(2_000)
+                page.wait_for_timeout(1_000)
         else:
             logger.info("Already claimed for today")
     except BaseException:
